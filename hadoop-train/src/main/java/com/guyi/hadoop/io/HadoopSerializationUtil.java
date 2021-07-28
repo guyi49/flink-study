@@ -34,9 +34,13 @@ public class HadoopSerializationUtil {
     }
 
     public static void main(String[] args) throws Exception {
+        // 测试序列化
         Person person = new Person("gobs",23,"woman");
         byte[] values = HadoopSerializationUtil.serialize(person);
+        System.out.println(values);
         // 测试反序列化
         Person p = new Person();
+        HadoopSerializationUtil.deserialize(p,values);
+        System.out.println(p);
     }
 }
