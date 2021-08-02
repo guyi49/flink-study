@@ -24,8 +24,6 @@ import java.io.IOException;
 public class wcTest {
     /**
      * map读取输入文件
-     * @author rdb
-     *
      */
     public static class MyMapper extends Mapper<LongWritable, Text, Text, LongWritable>{
 
@@ -47,8 +45,6 @@ public class wcTest {
 
     /**
      * reduce程序，归并统计
-     * @author rdb
-     *
      */
     public static class MyReduce extends Reducer<Text, LongWritable, Text, LongWritable>{
 
@@ -68,7 +64,7 @@ public class wcTest {
 
     /**
      * 自定义driver:封装mapreduce作业所有信息
-     *@param args
+     * @param args
      * @throws IOException
      */
     public static void main(String[] args) throws Exception {
