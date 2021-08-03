@@ -32,7 +32,7 @@ public class PartitionerApp {
     private static class MyMapper extends Mapper<LongWritable, Text,Text, IntWritable> {
         @Override
         protected void map(LongWritable key, Text value, Context context) throws IOException,InterruptedException {
-            String[] s = value.toString().split("\t");
+            String[] s = value.toString().split(" ");
             context.write(new Text(s[0]),new IntWritable(Integer.parseInt(s[1])));
         }
     }
