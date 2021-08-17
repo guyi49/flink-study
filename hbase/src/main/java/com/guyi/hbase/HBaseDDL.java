@@ -111,6 +111,15 @@ public class HBaseDDL {
         Delete delete = new Delete(Bytes.toBytes(rowKey));
         table.delete(delete);
     }
+    public static void main(String[] args) throws IOException {
+        //创建表
+        String  familyNames[]={"nature","social"};
+        createTable("test_hbase",familyNames);
+        //向表中插入数据
+        insert("test_hbase","libai","nature","height","25");
+        //删除表
+        dropTable("test_hbase");
+    }
 
 
 }
